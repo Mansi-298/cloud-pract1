@@ -1,0 +1,13 @@
+Assignment – VM file transfer
+
+Download - https://drive.google.com/drive/u/0/folders/1me_nJJh0fvdDOXX3ew2jzGQpoP7f_iFt
+
+> VBoxManage natnetwork add --netname natnet1 --network "10.0.2.0/24" –enable
+>VBoxManage natnetwork start --netname natnet1
+
+Now select your vm -> network -> add nat network -> natnet1 -> ok
+Same for another vm2
+Open both vm – type ifconfig
+Make sure both vm should have different inet address
+After then -> create new file - > touch mansi.txt -> nano mansi.txt -> add data
+Put this cmd to send file - > scp mansi.txt vagrant@inet_of_vm2:/home/vagrant
